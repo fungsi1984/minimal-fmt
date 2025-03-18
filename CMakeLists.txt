@@ -4,6 +4,7 @@ project(minimal-fmt LANGUAGES CXX)  # Changed C++ to CXX
 add_executable(${PROJECT_NAME})
 target_sources(${PROJECT_NAME} PRIVATE main.cpp)
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)  # Changed c++17 to cxx_std_17
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include(FetchContent)
 
@@ -15,3 +16,4 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(fmt)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)  # Added PRIVATE and fixed target name
+
