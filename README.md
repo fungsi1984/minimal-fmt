@@ -4,4 +4,4 @@
 - cmake --build build
 
 - cmake -DCMAKE_BUILD_TYPE=Debug -B build
-- cmake --build build --config debug 
+- cmake --build build --config Debug 

@@ -1,11 +1,14 @@
 cmake_minimum_required(VERSION 3.28)
-project(minimal-fmt LANGUAGES CXX)  # Changed C++ to CXX
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_STANDARD 23) # Compile as C++17.
+set(CMAKE_CXX_STANDARD_REQUIRED ON) # Require C++17 support.
+
+
+project(minimal-fmt LANGUAGES CXX)  
 
 add_executable(${PROJECT_NAME})
 target_sources(${PROJECT_NAME} PRIVATE main.cpp)
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)  # Changed c++17 to cxx_std_17
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)  
 include(FetchContent)
 
 FetchContent_Declare(
